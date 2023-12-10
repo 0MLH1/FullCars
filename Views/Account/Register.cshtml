@@ -1,0 +1,19 @@
+﻿@model FullCars.Models.RegistreViewModel
+
+<h2>Register</h2>
+
+<form asp-action="Register" method="post">
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+    </div>
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password" />
+    </div>
+    <button type="submit">Register</button>
+</form>
+
+<div>
+    <p>Already have an account? <a asp-action="Login" asp-controller="Account">Login here</a>.</p>
+</div>

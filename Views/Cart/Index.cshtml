@@ -1,0 +1,17 @@
+﻿@model List<FullCars.Models.CartItems>
+
+<h2>Shopping Cart</h2>
+
+@foreach (var item in Model)
+{
+    <div>
+        <p>Car: @item.CarName</p>
+        <p>Price: $@item.CarPrice</p>
+        <p>Quantity: @item.nbr_cars_in_card</p>
+    </div>
+}
+
+<div>
+    <p><a asp-action="Login" asp-controller="Account">Login</a></p>
+    <p><a asp-action="Register" asp-controller="Account">Register</a></p>
+</div>

@@ -1,0 +1,14 @@
+﻿@model FullCars.Models.Car
+
+<h2>Car Details</h2>
+
+<div>
+    <img src="~/Pictures/@Model.Description" alt="@Model.Marque" width="550px">
+    <p>Model: @Model.Marque</p>
+    <p>Price: $@Model.Price</p>
+</div>
+
+<div>
+    <p><a asp-action="Login" asp-controller="Account">Login</a></p>
+    <p><a asp-action="Register" asp-controller="Account">Register</a></p>
+</div>

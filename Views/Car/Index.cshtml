@@ -1,0 +1,22 @@
+﻿@model IEnumerable<FullCars.Models.Car>
+
+<h2>Cars for Sale</h2>
+
+<div>
+    <p><a asp-action="Login" asp-controller="Account">Login</a></p>
+    <p><a asp-action="Register" asp-controller="Account">Register</a></p>
+</div>
+
+@foreach (var car in Model)
+{
+    <div>
+        <img src="~/Pictures/@car.Description" alt="@car.Marque" width="250px">
+        <p>Model: @car.Marque</p>
+        <p>Price: $@car.Price</p>
+        <a asp-controller="Car" asp-action="Details" asp-route-id="@car.Id_car">Details</a>
+        <form asp-controller="Cart" asp-action="AddToCart" method="post">
+            <input type="hidden" name="carId" value="@car.Id_car" />
+            <button type="submit">Buy</button>
+        </form>
+    </div>
+}

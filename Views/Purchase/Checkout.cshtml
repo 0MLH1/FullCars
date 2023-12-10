@@ -1,0 +1,27 @@
+﻿@model List<FullCars.Models.CartItems>
+
+<h2>Checkout</h2>
+
+@foreach (var item in Model)
+{
+    <div>
+        <p>Car: @item.CarName</p>
+        <p>Price: $@item.CarPrice</p>
+        <p>Quantity: @item.nbr_cars_in_card</p>
+    </div>
+}
+
+<p>Total Price: $@ViewBag.TotalPrice</p>
+
+<form asp-action="ConfirmPurchase" method="post">
+    <div>
+        <label for="cardNumber">Card Number:</label>
+        <input type="text" id="cardNumber" name="cardNumber" required />
+    </div>
+    <button type="submit">Confirm Purchase</button>
+</form>
+
+<div>
+    <p><a asp-action="Login" asp-controller="Account">Login</a></p>
+    <p><a asp-action="Register" asp-controller="Account">Register</a></p>
+</div>
